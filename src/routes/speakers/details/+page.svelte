@@ -9,6 +9,7 @@
 		sessionText,
 		sessionDate,
 		sessionLocation,
+		sessionDepartment,
 		chartPurpose
 	} from '$lib/stores';
 	import { LogoVersion } from '$lib/types/LogoVersion';
@@ -28,6 +29,7 @@
 				sessionText: $sessionText,
 				sessionDate: $sessionDate,
 				sessionLocation: $sessionLocation,
+				sessionDepartment: $sessionDepartment,
 				chartPurpose: $chartPurpose
 			}),
 			headers: {
@@ -35,7 +37,7 @@
 			}
 		});
 		const { id } = await response.json();
-		window.location.href = `/tally/chart/${id}`;
+		window.location.href = `/speakers/chart/${id}`;
 		return false;
 	}
 </script>
@@ -50,7 +52,7 @@
 </div>
 <form>
 	<div class="formItem">
-		<label for="sessionText">Name (of speaking program):</label>
+		<label for="sessionText">Name (of speaker program):</label>
 		<textarea
 			id="sessionText"
 			placeholder="e.g. ABC Conference or Top 100 Books XYZ Magazine"
@@ -68,6 +70,10 @@
 			bind:value={$sessionLocation} />
 	</div>
 	<div class="formItem">
+		<label for="sessionDepartment">Department:</label>
+		<input id="sessionDepartment" placeholder="e.g. Sales" bind:value={$sessionDepartment} />
+	</div>
+	<div class="formItem">
 		<label for="chartPurpose">What are you using this tool for?</label>
 		<select id="chartPurpose" bind:value={$chartPurpose}>
 			<option value="none">- Select One -</option>
@@ -78,7 +84,7 @@
 		</select>
 	</div>
 	<div id="navigation">
-		<Button primaryLabel="Back" href="/tally" />
+		<Button primaryLabel="Back" href="/speakers" />
 		<Button primaryLabel="Submit" on:click|once={createChart} />
 	</div>
 </form>

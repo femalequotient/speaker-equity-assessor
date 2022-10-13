@@ -70,7 +70,7 @@
 			bind:value={$nonbinaryPeopleOfColorCount} />
 	</div>
 	<div id="navigation">
-		<Button primaryLabel="Continue" href="/tally/details" />
+		<Button primaryLabel="Continue" href="/speakers/details" />
 	</div>
 </form>
 
