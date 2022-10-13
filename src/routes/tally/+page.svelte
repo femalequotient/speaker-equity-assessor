@@ -12,7 +12,7 @@
 	import Button from '$lib/components/Button.svelte';
 </script>
 
-<Logo version={LogoVersion.SUBMARK} />
+<Logo version={LogoVersion.PRIMARY} />
 <div class="instructions">
 	<h1>Highlight Diverse Voices</h1>
 	<p class="intro">
