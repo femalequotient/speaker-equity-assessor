@@ -1,9 +1,17 @@
 <script lang="ts">
+	import metaLogo from '$lib/assets/logos/meta.png';
+	import fqLogo from '$lib/assets/logos/femaleQuotient.png';
 	export let privacyPolicyUrl: string;
 </script>
 
 <div class="footer">
-	<a href={privacyPolicyUrl} target="_blank">Privacy Policy</a>
+	<div class="links">
+		<a href={privacyPolicyUrl} target="_blank">Privacy Policy</a>
+	</div>
+	<div class="logos">
+		<img class="fqLogo" src={fqLogo} alt="The Female Quotient" />
+		<img class="metaLogo" src={metaLogo} alt="Meta" />
+	</div>
 </div>
 
 <style>
@@ -18,10 +26,23 @@
 		bottom: 0px;
 		left: 0px;
 		padding: 20px 0px;
-		display: flex;
-		justify-content: center;
 		width: 100%;
 		background: rgba(255, 255, 255, 1);
 		border-top: 1px solid #cccccc;
+		display: grid;
+		justify-content: center;
+		row-gap: 40px;
+	}
+	.links {
+		display: flex;
+		justify-content: center;
+	}
+	.logos {
+		display: flex;
+		justify-content: center;
+		column-gap: 60px;
+	}
+	.logos img {
+		max-width: 60px;
 	}
 </style>
