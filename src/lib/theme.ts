@@ -6,6 +6,7 @@ export const styles = {
 	'header-font-family': ['proxima-nova'],
 	'header-color': '#000000',
 	'button-background-color': '#1E4D82',
+	'button-hover-background-color': '#002D62',
 	'button-color': '#ffffff',
 	'form-border-color': '#cccccc',
 	'chart-background-color': '#FFFFFF',

@@ -6,9 +6,13 @@
 	export let primaryLabel = '';
 	export let secondaryLabel = '';
 
-	let wrapperTag = 'span';
+	enum ContainerType {
+		LINK,
+		SPAN
+	}
+	let container = ContainerType.SPAN;
 	if (href !== '') {
-		wrapperTag = 'a';
+		container = ContainerType.LINK;
 	}
 
 	const dispatchClick = (event: Event) => {
@@ -16,16 +20,29 @@
 	};
 </script>
 
-<svelte:element this={wrapperTag} {href} on:click={dispatchClick}>
-	<div class="button">
-		{#if primaryLabel}
-			<div class="primaryLabel">{primaryLabel}</div>
-		{/if}
-		{#if secondaryLabel}
-			<div class="secondaryLabel">{secondaryLabel}</div>
-		{/if}
-	</div>
-</svelte:element>
+{#if container === ContainerType.LINK}
+	<a {href} on:click={dispatchClick}>
+		<div class="button">
+			{#if primaryLabel}
+				<div class="primaryLabel">{primaryLabel}</div>
+			{/if}
+			{#if secondaryLabel}
+				<div class="secondaryLabel">{secondaryLabel}</div>
+			{/if}
+		</div>
+	</a>
+{:else}
+	<span on:click={dispatchClick}>
+		<div class="button">
+			{#if primaryLabel}
+				<div class="primaryLabel">{primaryLabel}</div>
+			{/if}
+			{#if secondaryLabel}
+				<div class="secondaryLabel">{secondaryLabel}</div>
+			{/if}
+		</div>
+	</span>
+{/if}
 
 <style>
 	a {
@@ -41,6 +58,9 @@
 		text-align: center;
 		display: flex;
 		flex-direction: column;
+	}
+	.button:hover {
+		background-color: var(--button-hover-background-color, #cccccc);
 	}
 	.primaryLabel {
 		font-size: 1em;
