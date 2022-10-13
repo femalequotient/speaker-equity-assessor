@@ -14,14 +14,18 @@
 
 <Logo version={LogoVersion.SUBMARK} />
 <div class="instructions">
-	<h1>Champion Gender Equality</h1>
+	<h1>Highlight Diverse Voices</h1>
 	<p class="intro">
-		As a meeting planner, you have a lot on your mind. We built this resource to align with your
-		work. Let us help you meet your equality goals!
+		Welcome to the speaker curating community. Track the success of your speaker program and
+		celebrate your wins.
 	</p>
-	<p class="intro-two">
-		Input the number of women, men, non-binary, and people of color who will be speaking at your
-		program.
+	<p class="intro">
+		Feeling like your speaker programs aren’t diverse enough? Not sure where to start? We’re here to
+		help you plan an awesome, inclusive program. Let’s do this!
+	</p>
+	<p class="intro">
+		Start by inputting the number of women, men, nonbinary, and people of color who will be speaking
+		at your program.
 	</p>
 	<p class="note">We affirm that trans men are men and trans women are women.</p>
 </div>
@@ -37,8 +41,7 @@
 			id="womenofcolor"
 			placeholder="0"
 			min="0"
-			bind:value={$womenOfColorCount}
-		/>
+			bind:value={$womenOfColorCount} />
 	</div>
 	<div class="formItem">
 		<label for="men">How many white men?</label>
@@ -55,8 +58,7 @@
 			id="nonbinary"
 			placeholder="0"
 			min="0"
-			bind:value={$whiteNonbinaryPeopleCount}
-		/>
+			bind:value={$whiteNonbinaryPeopleCount} />
 	</div>
 	<div class="formItem">
 		<label for="men">How many nonbinary people of color?</label>
@@ -65,8 +67,7 @@
 			id="men"
 			placeholder="0"
 			min="0"
-			bind:value={$nonbinaryPeopleOfColorCount}
-		/>
+			bind:value={$nonbinaryPeopleOfColorCount} />
 	</div>
 	<div id="navigation">
 		<Button primaryLabel="Continue" href="/tally/details" />
@@ -79,10 +80,6 @@
 	}
 	.intro {
 		max-width: 44rem;
-		margin-bottom: 1.6rem;
-	}
-	.intro-two {
-		max-width: 34rem;
 		margin-bottom: 1.6rem;
 	}
 	.note {

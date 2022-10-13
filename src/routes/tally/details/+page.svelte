@@ -42,11 +42,10 @@
 
 <Logo version={LogoVersion.SUBMARK} />
 <div class="instructions">
-	<h1>Keep Moving Forward</h1>
+	<h1>Strengthen Speaker Programs</h1>
 	<p class="intro">
-		Meeting planners are on the front lines of diversity, equity and inclusion representation. Tell
-		us more about your speaking program! The opportunity is huge. We want to cheer you on as you
-		progress
+		You’ve got this! Tell us more about your program. We are cheering you on as you progress. We
+		can't wait to see your speaker lineup and celebrate your successes with you!
 	</p>
 </div>
 <form>
@@ -55,8 +54,7 @@
 		<textarea
 			id="sessionText"
 			placeholder="e.g. ABC Conference or Top 100 Books XYZ Magazine"
-			bind:value={$sessionText}
-		/>
+			bind:value={$sessionText} />
 	</div>
 	<div class="formItem">
 		<label for="sessionDate">Date:</label>
@@ -67,8 +65,7 @@
 		<input
 			id="sessionLocation"
 			placeholder="e.g. Philadelphia Convention Center"
-			bind:value={$sessionLocation}
-		/>
+			bind:value={$sessionLocation} />
 	</div>
 	<div class="formItem">
 		<label for="chartPurpose">What are you using this tool for?</label>

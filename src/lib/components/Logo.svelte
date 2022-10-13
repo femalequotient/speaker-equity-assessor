@@ -16,9 +16,7 @@
 	><img
 		src={logoPath}
 		alt={content.logoAltText}
-		class:submark={version === LogoVersion.SUBMARK}
-	/></a
->
+		class:submark={version === LogoVersion.SUBMARK} /></a>
 
 <style>
 	a {
