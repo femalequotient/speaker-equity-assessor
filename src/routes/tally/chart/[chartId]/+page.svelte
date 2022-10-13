@@ -70,8 +70,7 @@
 			width="20"
 			height="20"
 			patternTransform="rotate({(womenOfColorPercentage / 2) * 360 - 90} 0 0)"
-			patternUnits="userSpaceOnUse"
-		>
+			patternUnits="userSpaceOnUse">
 			<line x1="0" y1="0" x2="0" y2="20" />
 		</pattern>
 		<pattern
@@ -79,8 +78,7 @@
 			width="20"
 			height="20"
 			patternTransform="rotate({(menOfColorPercentage / 2) * 360 - 90 + womenPercentage * 360} 0 0)"
-			patternUnits="userSpaceOnUse"
-		>
+			patternUnits="userSpaceOnUse">
 			<line x1="0" y1="0" x2="0" y2="20" />
 		</pattern>
 		<pattern
@@ -90,8 +88,7 @@
 			patternTransform="rotate({(nonbinaryPeopleOfColorPercentage / 2) * 360 -
 				90 +
 				(womenPercentage + menPercentage) * 360} 0 0)"
-			patternUnits="userSpaceOnUse"
-		>
+			patternUnits="userSpaceOnUse">
 			<line x1="0" y1="0" x2="0" y2="20" />
 		</pattern>
 	</defs>
@@ -101,8 +98,7 @@
 	<circle cx={centerX} cy={centerY} r={radius} />
 	<path
 		class="whiteWomenCount"
-		d={describeArc(centerX, centerY, radius, 0, whiteWomenPercentage * 360)}
-	/>
+		d={describeArc(centerX, centerY, radius, 0, whiteWomenPercentage * 360)} />
 	<path
 		class="womenOfColorCount"
 		fill="url(#womenOfColorHatch)"
@@ -112,8 +108,7 @@
 			radius,
 			whiteWomenPercentage * 360,
 			(whiteWomenPercentage + womenOfColorPercentage) * 360
-		)}
-	/>
+		)} />
 	<path
 		class="whiteMenCount"
 		d={describeArc(
@@ -122,8 +117,7 @@
 			radius,
 			womenPercentage * 360,
 			(womenPercentage + whiteMenPercentage) * 360
-		)}
-	/>
+		)} />
 	<path
 		class="menOfColorCount"
 		fill="url(#menOfColorHatch)"
@@ -133,8 +127,7 @@
 			radius,
 			(womenPercentage + whiteMenPercentage) * 360,
 			(womenPercentage + whiteMenPercentage + menOfColorPercentage) * 360
-		)}
-	/>
+		)} />
 	<path
 		class="whiteNonbinaryPeopleCount"
 		d={describeArc(
@@ -143,8 +136,7 @@
 			radius,
 			(womenPercentage + menPercentage) * 360,
 			(womenPercentage + menPercentage + whiteNonbinaryPeoplePercentage) * 360
-		)}
-	/>
+		)} />
 	<path
 		class="nonbinaryPeopleOfColorCount"
 		fill="url(#nonbinaryPeopleOfColorHatch)"
@@ -158,30 +150,23 @@
 				whiteNonbinaryPeoplePercentage +
 				nonbinaryPeopleOfColorPercentage) *
 				360
-		)}
-	/>
+		)} />
 	<text class="whiteWomenCount" x={legendFirstRow} y={legendOffset + 200}
-		>■ {whiteWomenCount} White {whiteWomenCount === 1 ? 'Woman' : 'Women'}</text
-	>
+		>■ {whiteWomenCount} White {whiteWomenCount === 1 ? 'Woman' : 'Women'}</text>
 	<text class="womenOfColorCount" x={legendSecondRow} y={legendOffset + 200}
-		>■ {womenOfColorCount} {womenOfColorCount === 1 ? ' Woman' : ' Women'} of Color</text
-	>
+		>■ {womenOfColorCount} {womenOfColorCount === 1 ? ' Woman' : ' Women'} of Color</text>
 	<text class="whiteMenCount" x={legendFirstRow} y={legendOffset + 230}
-		>■ {whiteMenCount} White {whiteMenCount === 1 ? ' Man' : 'Men'}</text
-	>
+		>■ {whiteMenCount} White {whiteMenCount === 1 ? ' Man' : 'Men'}</text>
 	<text class="menOfColorCount" x={legendSecondRow} y={legendOffset + 230}
-		>■ {menOfColorCount} {menOfColorCount === 1 ? ' Man' : ' Men'} of Color</text
-	>
+		>■ {menOfColorCount} {menOfColorCount === 1 ? ' Man' : ' Men'} of Color</text>
 	<text class="whiteNonbinaryPeopleCount" x={legendFirstRow} y={legendOffset + 260}
 		>■ {whiteNonbinaryPeopleCount} White Nonbinary {whiteNonbinaryPeopleCount === 1
 			? 'Person'
-			: 'People'}</text
-	>
+			: 'People'}</text>
 	<text class="nonbinaryPeopleOfColorCount" x={legendSecondRow} y={legendOffset + 260}
 		>■ {nonbinaryPeopleOfColorCount} Nonbinary {nonbinaryPeopleOfColorCount === 1
 			? 'Person'
-			: 'People'} of Color</text
-	>
+			: 'People'} of Color</text>
 	<image href={primaryLogo} width="200" x="350" y="790" />
 </svg>
 
@@ -210,8 +195,7 @@
 		</p>
 		<p>
 			<strong
-				><em>Here are some tips to help you when planning your next speaker program:</em></strong
-			>
+				><em>Here are some tips to help you when planning your next speaker program:</em></strong>
 		</p>
 		<p>
 			<strong>Evaluate your current speaker network.</strong> Is your network diverse? Do you have groups
@@ -249,8 +233,7 @@
 		</p>
 		<p>
 			<strong
-				><em> Here are some tips to help you when planning your next speaker program: </em></strong
-			>
+				><em> Here are some tips to help you when planning your next speaker program: </em></strong>
 		</p>
 		<p>
 			<strong>Evaluate your current speaker network.</strong> Is your network diverse? Do you have groups

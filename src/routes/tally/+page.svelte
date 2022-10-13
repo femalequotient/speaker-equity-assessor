@@ -41,8 +41,7 @@
 			id="womenofcolor"
 			placeholder="0"
 			min="0"
-			bind:value={$womenOfColorCount}
-		/>
+			bind:value={$womenOfColorCount} />
 	</div>
 	<div class="formItem">
 		<label for="men">How many white men?</label>
@@ -59,8 +58,7 @@
 			id="nonbinary"
 			placeholder="0"
 			min="0"
-			bind:value={$whiteNonbinaryPeopleCount}
-		/>
+			bind:value={$whiteNonbinaryPeopleCount} />
 	</div>
 	<div class="formItem">
 		<label for="men">How many nonbinary people of color?</label>
@@ -69,8 +67,7 @@
 			id="men"
 			placeholder="0"
 			min="0"
-			bind:value={$nonbinaryPeopleOfColorCount}
-		/>
+			bind:value={$nonbinaryPeopleOfColorCount} />
 	</div>
 	<div id="navigation">
 		<Button primaryLabel="Continue" href="/tally/details" />

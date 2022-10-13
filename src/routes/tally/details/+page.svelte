@@ -54,8 +54,7 @@
 		<textarea
 			id="sessionText"
 			placeholder="e.g. ABC Conference or Top 100 Books XYZ Magazine"
-			bind:value={$sessionText}
-		/>
+			bind:value={$sessionText} />
 	</div>
 	<div class="formItem">
 		<label for="sessionDate">Date:</label>
@@ -66,8 +65,7 @@
 		<input
 			id="sessionLocation"
 			placeholder="e.g. Philadelphia Convention Center"
-			bind:value={$sessionLocation}
-		/>
+			bind:value={$sessionLocation} />
 	</div>
 	<div class="formItem">
 		<label for="chartPurpose">What are you using this tool for?</label>
