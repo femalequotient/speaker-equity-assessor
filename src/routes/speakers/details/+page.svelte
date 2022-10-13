@@ -9,6 +9,7 @@
 		sessionText,
 		sessionDate,
 		sessionLocation,
+		sessionDepartment,
 		chartPurpose
 	} from '$lib/stores';
 	import { LogoVersion } from '$lib/types/LogoVersion';
@@ -28,6 +29,7 @@
 				sessionText: $sessionText,
 				sessionDate: $sessionDate,
 				sessionLocation: $sessionLocation,
+				sessionDepartment: $sessionDepartment,
 				chartPurpose: $chartPurpose
 			}),
 			headers: {
@@ -50,7 +52,7 @@
 </div>
 <form>
 	<div class="formItem">
-		<label for="sessionText">Name (of speaking program):</label>
+		<label for="sessionText">Name (of speaker program):</label>
 		<textarea
 			id="sessionText"
 			placeholder="e.g. ABC Conference or Top 100 Books XYZ Magazine"
@@ -66,6 +68,10 @@
 			id="sessionLocation"
 			placeholder="e.g. Philadelphia Convention Center"
 			bind:value={$sessionLocation} />
+	</div>
+	<div class="formItem">
+		<label for="sessionDepartment">Department:</label>
+		<input id="sessionDepartment" placeholder="e.g. Sales" bind:value={$sessionDepartment} />
 	</div>
 	<div class="formItem">
 		<label for="chartPurpose">What are you using this tool for?</label>

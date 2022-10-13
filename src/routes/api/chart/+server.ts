@@ -14,6 +14,7 @@ export async function POST({ request }: RequestEvent) {
 		sessionText,
 		sessionDate,
 		sessionLocation,
+		sessionDepartment,
 		chartPurpose
 	} = values;
 	try {
@@ -28,6 +29,7 @@ export async function POST({ request }: RequestEvent) {
 			sessionText,
 			sessionDate,
 			sessionLocation,
+			sessionDepartment,
 			chartPurpose
 		};
 		const chartRef = await chartsCollection.add(chartData);
