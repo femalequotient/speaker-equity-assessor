@@ -37,7 +37,7 @@
 			}
 		});
 		const { id } = await response.json();
-		window.location.href = `/tally/chart/${id}`;
+		window.location.href = `/speakers/chart/${id}`;
 		return false;
 	}
 </script>
@@ -84,7 +84,7 @@
 		</select>
 	</div>
 	<div id="navigation">
-		<Button primaryLabel="Back" href="/tally" />
+		<Button primaryLabel="Back" href="/speakers" />
 		<Button primaryLabel="Submit" on:click|once={createChart} />
 	</div>
 </form>
