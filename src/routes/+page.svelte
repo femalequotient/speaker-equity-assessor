@@ -14,7 +14,7 @@
 	</p>
 </div>
 <div id="navigation">
-	<Button primaryLabel="Get Started" href="/tally" />
+	<Button primaryLabel="Get Started" href="/speakers" />
 </div>
 
 <style>
