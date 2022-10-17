@@ -163,21 +163,31 @@
 				360
 		)} />
 	<text class="whiteWomenCount" x={legendFirstColumn} y={legendOffset + 200}
-		>■ {whiteWomenCount} White {whiteWomenCount === 1 ? 'Woman' : 'Women'}</text>
+		>■ {whiteWomenCount} White {whiteWomenCount === 1 ? 'Woman' : 'Women'} ({Math.ceil(
+			whiteWomenPercentage * 100
+		)}%)</text>
 	<text class="womenOfColorCount" x={legendSecondColumn} y={legendOffset + 200}
-		>■ {womenOfColorCount} {womenOfColorCount === 1 ? ' Woman' : ' Women'} of Color</text>
+		>■ {womenOfColorCount}
+		{womenOfColorCount === 1 ? ' Woman' : ' Women'} of Color ({Math.ceil(
+			womenOfColorPercentage * 100
+		)}%)</text>
 	<text class="whiteMenCount" x={legendFirstColumn} y={legendOffset + 240}
-		>■ {whiteMenCount} White {whiteMenCount === 1 ? ' Man' : 'Men'}</text>
+		>■ {whiteMenCount} White {whiteMenCount === 1 ? ' Man' : 'Men'} ({Math.ceil(
+			whiteMenPercentage * 100
+		)}%)</text>
 	<text class="menOfColorCount" x={legendSecondColumn} y={legendOffset + 240}
-		>■ {menOfColorCount} {menOfColorCount === 1 ? ' Man' : ' Men'} of Color</text>
+		>■ {menOfColorCount}
+		{menOfColorCount === 1 ? ' Man' : ' Men'} of Color ({Math.ceil(
+			menOfColorPercentage * 100
+		)}%)</text>
 	<text class="whiteNonbinaryPeopleCount" x={legendFirstColumn} y={legendOffset + 280}
 		>■ {whiteNonbinaryPeopleCount} White Nonbinary {whiteNonbinaryPeopleCount === 1
 			? 'Person'
-			: 'People'}</text>
+			: 'People'} ({Math.ceil(whiteNonbinaryPeoplePercentage * 100)}%)</text>
 	<text class="nonbinaryPeopleOfColorCount" x={legendSecondColumn} y={legendOffset + 280}
 		>■ {nonbinaryPeopleOfColorCount} Nonbinary {nonbinaryPeopleOfColorCount === 1
 			? 'Person'
-			: 'People'} of Color</text>
+			: 'People'} of Color ({Math.ceil(nonbinaryPeopleOfColorPercentage * 100)}%)</text>
 	<image href={primaryLogo} width="200" x="350" y="790" />
 </svg>
 <div id="navigation">
@@ -349,7 +359,7 @@
 	text.menOfColorCount,
 	text.whiteNonbinaryPeopleCount,
 	text.nonbinaryPeopleOfColorCount {
-		font-size: 30px;
+		font-size: 25px;
 		font-weight: bold;
 	}
 	text.whiteWomenCount {
