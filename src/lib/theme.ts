@@ -18,7 +18,8 @@ export const styles = {
 	'chart-white-men-fill': '#A7D0E9',
 	'chart-men-of-color-fill': '#77BDEB',
 	'chart-white-nonbinary-people-fill': '#90A4A9',
-	'chart-nonbinary-people-of-color-fill': '#697C8B'
+	'chart-nonbinary-people-of-color-fill': '#697C8B',
+	'form-error-border-color': '#ffaaaa'
 };
 
 export const urls = {

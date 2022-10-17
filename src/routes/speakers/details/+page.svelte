@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
 	import {
 		whiteWomenCount,
 		womenOfColorCount,
@@ -16,29 +17,36 @@
 	import Logo from '$lib/components/Logo.svelte';
 	import Button from '$lib/components/Button.svelte';
 
+	let showSpeakerProgramNameError = false;
+	let loading = false;
+
 	async function createChart(e: Event) {
-		const response = await fetch('/api/chart', {
-			method: 'POST',
-			body: JSON.stringify({
-				whiteWomenCount: $whiteWomenCount,
-				womenOfColorCount: $womenOfColorCount,
-				whiteMenCount: $whiteMenCount,
-				menOfColorCount: $menOfColorCount,
-				whiteNonbinaryPeopleCount: $whiteNonbinaryPeopleCount,
-				nonbinaryPeopleOfColorCount: $nonbinaryPeopleOfColorCount,
-				sessionText: $sessionText,
-				sessionDate: $sessionDate,
-				sessionLocation: $sessionLocation,
-				sessionDepartment: $sessionDepartment,
-				chartPurpose: $chartPurpose
-			}),
-			headers: {
-				'content-type': 'application/json'
-			}
-		});
-		const { id } = await response.json();
-		window.location.href = `/speakers/chart/${id}`;
-		return false;
+		if ($sessionText === '') {
+			showSpeakerProgramNameError = true;
+		} else if (!loading) {
+			loading = true;
+			const response = await fetch('/api/chart', {
+				method: 'POST',
+				body: JSON.stringify({
+					whiteWomenCount: $whiteWomenCount,
+					womenOfColorCount: $womenOfColorCount,
+					whiteMenCount: $whiteMenCount,
+					menOfColorCount: $menOfColorCount,
+					whiteNonbinaryPeopleCount: $whiteNonbinaryPeopleCount,
+					nonbinaryPeopleOfColorCount: $nonbinaryPeopleOfColorCount,
+					sessionText: $sessionText,
+					sessionDate: $sessionDate,
+					sessionLocation: $sessionLocation,
+					sessionDepartment: $sessionDepartment,
+					chartPurpose: $chartPurpose
+				}),
+				headers: {
+					'content-type': 'application/json'
+				}
+			});
+			const { id } = await response.json();
+			goto(`/speakers/chart/${id}`);
+		}
 	}
 </script>
 
@@ -51,6 +59,9 @@
 	</p>
 </div>
 <form>
+	{#if showSpeakerProgramNameError}
+		<div class="error">Please provide the name of your speaker program.</div>
+	{/if}
 	<div class="formItem">
 		<label for="sessionText">Name (of speaker program):</label>
 		<textarea
@@ -85,7 +96,7 @@
 	</div>
 	<div id="navigation">
 		<Button primaryLabel="Back" href="/speakers" />
-		<Button primaryLabel="Submit" on:click|once={createChart} />
+		<Button primaryLabel="Submit" on:click={createChart} />
 	</div>
 </form>
 
