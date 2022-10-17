@@ -1,8 +1,16 @@
 <script lang="ts">
 	import { LogoVersion } from '$lib/types/LogoVersion';
 	import Logo from '$lib/components/Logo.svelte';
+	import Button from '$lib/components/Button.svelte';
 	import { describeArc } from '$lib/utils';
 	import primaryLogo from '$lib/assets/logos/primary.png';
+
+	import { onMount } from 'svelte';
+
+	let currentLocation = '';
+	onMount(() => {
+		currentLocation = window.location.href;
+	});
 
 	export let data;
 	const {
@@ -169,6 +177,11 @@
 			: 'People'} of Color</text>
 	<image href={primaryLogo} width="200" x="350" y="790" />
 </svg>
+<div id="navigation">
+	<Button
+		primaryLabel="Share with Colleagues"
+		href="mailto:?subject=Speaker%20Equity%20Assessment&body=I thought you might want to see this equity breakdown: {currentLocation}" />
+</div>
 
 <div class="explanation">
 	{#if rating === Rating.GREAT}
@@ -266,11 +279,20 @@
 </div>
 
 <style>
+	#navigation {
+		margin: 40px 0px;
+		justify-content: space-between;
+		width: 600px;
+	}
 	#chart {
 		height: 600px;
 		width: 600px;
 	}
 	@media (max-width: 900px) {
+		#navigation {
+			margin: 40px 0px;
+			width: 400px;
+		}
 		#chart {
 			height: 400px;
 			width: 400px;

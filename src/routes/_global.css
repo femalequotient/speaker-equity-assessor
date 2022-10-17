@@ -30,6 +30,11 @@ h6 {
 	gap: 10px;
 	margin-top: 1rem;
 }
+@media (max-width: 900px) {
+	#navigation {
+		flex-direction: column;
+	}
+}
 input,
 textarea,
 select {
