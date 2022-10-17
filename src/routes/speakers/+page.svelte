@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
 	import {
 		whiteWomenCount,
 		womenOfColorCount,
@@ -10,6 +11,23 @@
 	import { LogoVersion } from '$lib/types/LogoVersion';
 	import Logo from '$lib/components/Logo.svelte';
 	import Button from '$lib/components/Button.svelte';
+
+	let showParticipantsError = false;
+
+	const handleSubmit = () => {
+		const totalParticipants =
+			$whiteWomenCount +
+			$womenOfColorCount +
+			$whiteMenCount +
+			$menOfColorCount +
+			$whiteNonbinaryPeopleCount +
+			$nonbinaryPeopleOfColorCount;
+		if (totalParticipants > 0) {
+			goto('/speakers/details');
+		} else {
+			showParticipantsError = true;
+		}
+	};
 </script>
 
 <Logo version={LogoVersion.PRIMARY} />
@@ -30,6 +48,9 @@
 	<p class="note">We affirm that trans men are men and trans women are women.</p>
 </div>
 <form>
+	{#if showParticipantsError}
+		<div class="error">You must have at least one participant.</div>
+	{/if}
 	<div class="formItem">
 		<label for="women">How many white women?</label>
 		<input type="number" id="women" placeholder="0" min="0" bind:value={$whiteWomenCount} />
@@ -70,7 +91,7 @@
 			bind:value={$nonbinaryPeopleOfColorCount} />
 	</div>
 	<div id="navigation">
-		<Button primaryLabel="Continue" href="/speakers/details" />
+		<Button primaryLabel="Continue" on:click={handleSubmit} />
 	</div>
 </form>
 
