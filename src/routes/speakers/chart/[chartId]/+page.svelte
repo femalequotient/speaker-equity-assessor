@@ -41,7 +41,10 @@
 	const menPercentage = whiteMenPercentage + menOfColorPercentage;
 	const whiteNonbinaryPeoplePercentage = whiteNonbinaryPeopleCount / Math.max(totalCount, 1);
 	const nonbinaryPeopleOfColorPercentage = nonbinaryPeopleOfColorCount / Math.max(totalCount, 1);
+	const nobinaryPeoplePercentage =
+		whiteNonbinaryPeoplePercentage + nonbinaryPeopleOfColorPercentage;
 	const notDudesOfColorPercentage = womenOfColorPercentage + nonbinaryPeopleOfColorPercentage;
+	const notDudesPercentage = womenPercentage + nobinaryPeoplePercentage;
 
 	enum Rating {
 		GREAT = 'great',
@@ -51,11 +54,11 @@
 
 	let rating: Rating;
 
-	if (womenPercentage >= 0.5 && notDudesOfColorPercentage >= 0.15) {
+	if (notDudesPercentage >= 0.5 && notDudesOfColorPercentage >= 0.15) {
 		rating = Rating.GREAT;
 	} else if (
-		(womenPercentage < 0.5 && womenPercentage >= 0.35) ||
-		(womenPercentage >= 0.5 && notDudesOfColorPercentage < 0.15)
+		(notDudesPercentage < 0.5 && notDudesPercentage >= 0.35) ||
+		(notDudesPercentage >= 0.5 && notDudesOfColorPercentage < 0.15)
 	) {
 		rating = Rating.OK;
 	} else {
