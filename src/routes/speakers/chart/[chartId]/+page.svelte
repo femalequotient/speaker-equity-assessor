@@ -26,8 +26,8 @@
 	const centerX = 450;
 	const centerY = 350;
 	const legendOffset = 450;
-	const legendFirstRow = 50;
-	const legendSecondRow = 460;
+	const legendFirstColumn = 50;
+	const legendSecondColumn = 460;
 	const radius = 200;
 	const womenCount = whiteWomenCount + womenOfColorCount;
 	const menCount = whiteMenCount + menOfColorCount;
@@ -162,19 +162,19 @@
 				nonbinaryPeopleOfColorPercentage) *
 				360
 		)} />
-	<text class="whiteWomenCount" x={legendFirstRow} y={legendOffset + 200}
+	<text class="whiteWomenCount" x={legendFirstColumn} y={legendOffset + 200}
 		>■ {whiteWomenCount} White {whiteWomenCount === 1 ? 'Woman' : 'Women'}</text>
-	<text class="womenOfColorCount" x={legendSecondRow} y={legendOffset + 200}
+	<text class="womenOfColorCount" x={legendSecondColumn} y={legendOffset + 200}
 		>■ {womenOfColorCount} {womenOfColorCount === 1 ? ' Woman' : ' Women'} of Color</text>
-	<text class="whiteMenCount" x={legendFirstRow} y={legendOffset + 230}
+	<text class="whiteMenCount" x={legendFirstColumn} y={legendOffset + 240}
 		>■ {whiteMenCount} White {whiteMenCount === 1 ? ' Man' : 'Men'}</text>
-	<text class="menOfColorCount" x={legendSecondRow} y={legendOffset + 230}
+	<text class="menOfColorCount" x={legendSecondColumn} y={legendOffset + 240}
 		>■ {menOfColorCount} {menOfColorCount === 1 ? ' Man' : ' Men'} of Color</text>
-	<text class="whiteNonbinaryPeopleCount" x={legendFirstRow} y={legendOffset + 260}
+	<text class="whiteNonbinaryPeopleCount" x={legendFirstColumn} y={legendOffset + 280}
 		>■ {whiteNonbinaryPeopleCount} White Nonbinary {whiteNonbinaryPeopleCount === 1
 			? 'Person'
 			: 'People'}</text>
-	<text class="nonbinaryPeopleOfColorCount" x={legendSecondRow} y={legendOffset + 260}
+	<text class="nonbinaryPeopleOfColorCount" x={legendSecondColumn} y={legendOffset + 280}
 		>■ {nonbinaryPeopleOfColorCount} Nonbinary {nonbinaryPeopleOfColorCount === 1
 			? 'Person'
 			: 'People'} of Color</text>
@@ -350,6 +350,7 @@
 	text.whiteNonbinaryPeopleCount,
 	text.nonbinaryPeopleOfColorCount {
 		font-size: 30px;
+		font-weight: bold;
 	}
 	text.whiteWomenCount {
 		fill: var(--chart-white-women-fill, #009900);
