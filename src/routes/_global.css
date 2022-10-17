@@ -3,8 +3,6 @@ body {
 	font-size: 1.3rem;
 	background-color: var(--body-background-color, #ffffff);
 	color: var(--body-color, #000000);
-	padding: 10px;
-	height: 100%;
 	margin: 0px;
 }
 h1,
@@ -14,15 +12,6 @@ h4,
 h5,
 h6 {
 	color: var(--header-color, #000000);
-}
-#container {
-	display: flex;
-	flex-direction: column;
-	margin: auto;
-	justify-content: center;
-	max-width: 45rem;
-	align-items: center;
-	padding-bottom: 180px;
 }
 #navigation {
 	display: flex;
