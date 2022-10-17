@@ -22,16 +22,12 @@
 		text-decoration: none;
 	}
 	.footer {
-		position: fixed;
-		bottom: 0px;
-		left: 0px;
 		padding: 20px 0px;
 		width: 100%;
 		background: rgba(255, 255, 255, 1);
-		border-top: 1px solid #cccccc;
 		display: grid;
 		justify-content: center;
-		row-gap: 40px;
+		row-gap: 10px;
 	}
 	.links {
 		display: flex;
@@ -41,8 +37,13 @@
 		display: flex;
 		justify-content: center;
 		column-gap: 60px;
+		align-items: center;
 	}
 	.logos img {
 		max-width: 60px;
+		display: block;
+	}
+	.logos img.metaLogo {
+		max-width: 120px;
 	}
 </style>

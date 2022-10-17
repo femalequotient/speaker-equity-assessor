@@ -9,7 +9,29 @@
 </svelte:head>
 
 <ThemeLoader />
-<div id="container">
-	<slot />
+
+<div id="siteWrapper">
+	<div id="primaryContent">
+		<slot />
+	</div>
+	<div id="footer">
+		<Footer privacyPolicyUrl="https://google.com" />
+	</div>
 </div>
-<Footer privacyPolicyUrl="https://google.com" />
+
+<style>
+	#siteWrapper {
+		display: flex;
+		min-height: 100vh;
+		flex-direction: column;
+	}
+	#primaryContent {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		margin: auto;
+		max-width: 45rem;
+		align-items: center;
+		padding: 10px;
+	}
+</style>
