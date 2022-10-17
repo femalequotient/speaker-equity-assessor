@@ -2,6 +2,7 @@
 	import './_global.css';
 	import Footer from './_components/Footer.svelte';
 	import ThemeLoader from '../lib/components/ThemeLoader.svelte';
+	import { urls } from '$lib/theme';
 </script>
 
 <svelte:head>
@@ -15,7 +16,7 @@
 		<slot />
 	</div>
 	<div id="footer">
-		<Footer privacyPolicyUrl="https://google.com" />
+		<Footer privacyPolicyUrl={urls.privacyPolicyUrl} />
 	</div>
 </div>
 
