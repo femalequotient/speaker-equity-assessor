@@ -284,7 +284,7 @@
 <style>
 	#navigation {
 		margin: 40px 0px;
-		justify-content: space-between;
+		justify-content: center;
 		width: 600px;
 	}
 	#chart {
