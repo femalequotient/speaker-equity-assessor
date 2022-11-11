@@ -20,7 +20,7 @@
 	let showSpeakerProgramNameError = false;
 	let loading = false;
 
-	async function createChart(e: Event) {
+	async function createChart() {
 		if ($sessionText === '') {
 			showSpeakerProgramNameError = true;
 		} else if (!loading) {

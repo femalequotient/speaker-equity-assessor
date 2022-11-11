@@ -46,6 +46,12 @@ cp .env.template .env
 edit .env
 ```
 
+You can then run the emulators using:
+
+```
+firebase emulators:start
+```
+
 ## Publishing
 
 To publish manually you will need the [Firebase CLI](https://firebase.google.com/docs/cli) installed.
